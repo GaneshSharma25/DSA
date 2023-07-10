@@ -53,6 +53,23 @@ public class DoublyLinkedList {
         return true;
     }
 
+    public void reverseDLL(){
+        if(head == null || head.getNext() == null){
+            return;
+        }
+
+        Node temp = head;
+        Node prev = null;
+        while(temp != null){
+            prev = temp.getPrev();
+            temp.setPrev(temp.getNext());
+            temp.setNext(prev);
+            temp = temp.getPrev();
+        }
+        head = prev.getPrev();
+        display();
+    }
+
     
 
 }
