@@ -13,7 +13,7 @@ public class BubbleSort {
                     swapFlag = true;
                 }
             }
-            if(swapFlag){
+            if(!swapFlag){
                 break;
             }
         }
