@@ -1,4 +1,5 @@
 package SinglyLinkedList;
+
 public class LinkedList {
 
     private Node head;
@@ -132,6 +133,25 @@ public class LinkedList {
 
     }
 
+    public boolean deleteLast() {
+        if (head == null) {
+            return false;
+        }
+        if (head.getNext() == null) {
+            head = null;
+            return true;
+        }
+        Node temp = head;
+        while (true) {
+            if (temp.getNext().getNext() == null) {
+                temp.setNext(null);
+                return true;
+            }
+            temp = temp.getNext();
+        }
+
+    }
+
     // ---------------------------------------------------------------------------
     // recursive solution
     public int searchLLRecursive(Node node, int data) {
@@ -155,5 +175,37 @@ public class LinkedList {
     public void setHead(Node head) {
         this.head = head;
     }
+
+    //reverse a singly linkedlist
+
+    public void reverse(){
+        Node oldHead = head;
+        head = null;
+
+        while(oldHead != null){
+            Node temp = oldHead;
+            oldHead = oldHead.getNext();
+
+            temp.setNext(head);
+            head = temp;
+        }
+    }
+
+    //find mid of linked list
+    public int findMid(){
+        Node fast = head;
+        Node slow = head;
+
+        while(fast != null && fast.getNext() != null){
+            fast = fast.getNext().getNext();
+            slow = slow.getNext();
+        }
+
+        return slow.getData();
+    }
+
+
+
+    
 
 }

@@ -1,3 +1,5 @@
+
+
 public class Stack<T> {
     private T [] arr;
     private int size;
@@ -6,7 +8,6 @@ public class Stack<T> {
     public Stack(int size) {
         this.size = size;
         top = -1;
-        arr = (T []) new Object[size];
     }
 
     public boolean isEmpty() {
@@ -38,5 +39,15 @@ public class Stack<T> {
             return null;
         }
         return arr[top];
+    }
+
+    public static void main(String[] args) throws Exception {
+        System.out.println("Hello, World!");
+        Stack st = new Stack(0);
+    
+        
+    
+    
+    
     }
 }

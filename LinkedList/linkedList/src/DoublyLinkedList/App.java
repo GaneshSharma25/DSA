@@ -15,7 +15,5 @@ public class App {
         System.out.println();
         dll.reverseDLL();
 
-        LinkedList ll =new LinkedList<>();
-
     }
 }
