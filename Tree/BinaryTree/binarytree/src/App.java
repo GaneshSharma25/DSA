@@ -17,6 +17,7 @@ public class App {
         bst.add(80);
         bst.insert(110);
         bst.insert(56);
+        bst.findHeight(bst.getRoot());
 
        // bst.inOrderTraversal();
         bst.preOrderTrav();

@@ -290,4 +290,24 @@ public class BST {
         return curr;
     }
 
+    public int findHeight(Node root) {
+        // Check if the root is null, which means the tree is empty
+        if (root == null) {
+            return 0;
+        }
+        // Recursively calculate the height of the left subtree
+        int lh = findHeight(root.getLeft());
+        // Recursively calculate the height of the right subtree
+        int rh = findHeight(root.getRight());
+        // Compare the heights of the left and right subtrees
+        if (rh > lh) {
+            // If the right subtree is taller, return its height plus 1
+            return 1 + rh;
+        } else {
+            // Otherwise, return the height of the left subtree plus 1
+            return 1 + lh;
+        }
+    }
+    
+
 }

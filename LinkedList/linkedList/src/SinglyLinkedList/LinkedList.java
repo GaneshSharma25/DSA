@@ -204,6 +204,18 @@ public class LinkedList {
         return slow.getData();
     }
 
+    public void reverse1(){
+        Node oldHead = head;
+        head = null;
+        Node temp = null;
+        while(oldHead != null){
+            temp = oldHead;
+            oldHead = oldHead.getNext();
+            temp.setNext(head);
+            head = temp;
+        }
+    }
+
 
 
     

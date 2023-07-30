@@ -1,14 +1,16 @@
 import StackPkg.Stack;
+import StackPkg.StackLL;
 
 public class App {
 
     public static void main(String[] args) {
-        Stack stack = new Stack();
+        StackLL stackLL = new StackLL();
        
-        System.out.println( stack.push(50));
-         stack.push(95);
-        stack.push(100);
-        stack.display();
-        System.out.println(stack.pop() +" "+stack.isEmpty());
+        System.out.println( stackLL.push(50));
+        
+        stackLL.push(95);
+        stackLL.push(100);
+        stackLL.display();
+        System.out.println(stackLL.pop() +" "+stackLL.isEmpty());
     }
 }
