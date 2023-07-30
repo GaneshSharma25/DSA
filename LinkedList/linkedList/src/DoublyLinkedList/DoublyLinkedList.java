@@ -69,6 +69,36 @@ public class DoublyLinkedList {
         head = prev.getPrev();
         display();
     }
+    public boolean deleteAtPosition(int num) {
+		if(head == null) {
+			return false;
+		}
+		int pos = 1;
+		if(num ==1) {
+			head.getNext().setPrev(null);
+			head = head.getNext();
+			return true;
+		}
+		Node temp = head;
+		while(temp != null) {
+			if(pos == num) {
+				if(temp.getNext() != null) {
+					temp.getPrev().setNext(temp.getNext());
+					temp.getNext().setPrev(temp.getPrev());
+					temp = null;
+					return true;
+				}else {
+					temp.getPrev().setNext(null);
+					temp = null;
+					return true;
+				}
+			}
+			
+			temp = temp.getNext();
+			pos++;
+		}
+		return false;
+	}
 
     
 
